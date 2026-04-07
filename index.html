@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nibi Walks — Homepage Wireframe</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: #f0ede8;
+      color: #2a2a2a;
+    }
+
+    /* ── Annotation system ── */
+    .label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .note {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      color: #e06a00;
+      font-style: italic;
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+    .annotation-line {
+      border-left: 2px dashed #e06a00;
+      padding-left: 10px;
+      margin: 8px 0;
+    }
+
+    /* ── Utility ── */
+    .placeholder {
+      background: #d9d4cc;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+    }
+    .section-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+    hr.divider {
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 0;
+    }
+
+    /* ════════════════════════════
+       1. TOP BAR
+    ════════════════════════════ */
+    .topbar {
+      background: #2b2b2b;
+      color: #ccc;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      text-align: center;
+      padding: 8px 32px;
+      letter-spacing: 0.06em;
+    }
+    .topbar strong { color: #fff; }
+
+    /* ════════════════════════════
+       2. NAV
+    ════════════════════════════ */
+    nav {
+      background: #fff;
+      border-bottom: 2px solid #2b2b2b;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+    }
+    .nav-logo {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      padding: 18px 28px 18px 0;
+      margin-right: 16px;
+      border-right: 1px solid #e0e0e0;
+      white-space: nowrap;
+      color: #2b2b2b;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 0;
+      flex: 1;
+    }
+    .nav-links li a {
+      display: block;
+      padding: 20px 18px;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      color: #2b2b2b;
+      letter-spacing: 0.03em;
+      border-bottom: 3px solid transparent;
+      white-space: nowrap;
+    }
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      border-bottom-color: #555555;
+      color: #555555;
+    }
+    .nav-cta {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 9px 18px;
+      border-radius: 3px;
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #2b2b2b;
+      color: #2b2b2b;
+    }
+    .btn-primary {
+      background: #555555;
+      color: #fff;
+    }
+
+    /* ════════════════════════════
+       3. HERO
+    ════════════════════════════ */
+    .hero {
+      background: #1a1a1a;
+      color: #fff;
+      padding: 72px 32px 64px;
+      text-align: center;
+      position: relative;
+    }
+    .hero-eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: 42px;
+      line-height: 1.2;
+      max-width: 680px;
+      margin: 0 auto 20px;
+      font-weight: 400;
+    }
+    .hero p {
+      font-size: 17px;
+      line-height: 1.7;
+      max-width: 560px;
+      margin: 0 auto 36px;
+      color: #cccccc;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-hero-primary {
+      background: #fff;
+      color: #1a1a1a;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 3px;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .btn-hero-secondary {
+      background: transparent;
+      color: #fff;
+      border: 2px solid rgba(255,255,255,0.5);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 3px;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .hero-annotation {
+      position: absolute;
+      right: 32px;
+      top: 32px;
+      max-width: 200px;
+      text-align: left;
+    }
+
+    /* ════════════════════════════
+       4. ACTIVE WALK BANNER
+    ════════════════════════════ */
+    .active-walk-banner {
+      background: #3a3a3a;
+      color: #fff;
+      padding: 18px 32px;
+    }
+    .active-walk-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .active-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #999999;
+      flex-shrink: 0;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+    .active-walk-text {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      flex: 1;
+    }
+    .active-walk-text strong { font-weight: 700; }
+    .active-walk-text span { color: #cccccc; }
+    .banner-link {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: underline;
+      white-space: nowrap;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* ════════════════════════════
+       5. UPCOMING WALK SPOTLIGHT
+    ════════════════════════════ */
+    .walk-spotlight {
+      background: #fff;
+      padding: 56px 32px;
+    }
+    .walk-spotlight .section-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .walk-spotlight-left {}
+    .walk-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #555555;
+      margin-bottom: 12px;
+    }
+    .walk-spotlight h2 {
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 1.25;
+      margin-bottom: 16px;
+      color: #1a1a1a;
+    }
+    .walk-meta {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      color: #555;
+      line-height: 2;
+      margin-bottom: 20px;
+    }
+    .walk-meta span {
+      display: block;
+    }
+    .walk-meta strong {
+      color: #1a1a1a;
+    }
+    .walk-spotlight-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+    .btn-dark {
+      background: #2b2b2b;
+      color: #fff;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 12px 22px;
+      border-radius: 3px;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .btn-ghost {
+      background: transparent;
+      color: #2b2b2b;
+      border: 2px solid #2b2b2b;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: 3px;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .walk-map-placeholder {
+      width: 100%;
+      height: 280px;
+      background: #d5d5d5;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: #777777;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      border: 1px solid #c0c0c0;
+    }
+    .map-icon { font-size: 28px; }
+
+    /* ════════════════════════════
+       6. AUDIENCE PATHWAYS
+    ════════════════════════════ */
+    .pathways {
+      background: #f7f4ef;
+      padding: 56px 32px;
+      border-top: 1px solid #e0dbd3;
+      border-bottom: 1px solid #e0dbd3;
+    }
+    .pathways-heading {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .pathways-heading .label { justify-content: center; display: flex; }
+    .pathways-heading h2 {
+      font-size: 26px;
+      font-weight: 400;
+      color: #1a1a1a;
+    }
+    .pathway-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .pathway-card {
+      background: #fff;
+      border-radius: 4px;
+      padding: 32px 28px;
+      border: 1px solid #e0dbd3;
+    }
+    .pathway-icon {
+      font-size: 28px;
+      margin-bottom: 14px;
+    }
+    .pathway-card h3 {
+      font-size: 20px;
+      font-weight: 400;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+    }
+    .pathway-card p {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    .pathway-link {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: #555555;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* ════════════════════════════
+       7. FEATURED STORY
+    ════════════════════════════ */
+    .featured-story {
+      background: #fff;
+      padding: 64px 32px;
+    }
+    .featured-story .section-wrap {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .story-tag {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #555555;
+      margin-bottom: 10px;
+    }
+    .featured-story h2 {
+      font-size: 26px;
+      font-weight: 400;
+      line-height: 1.3;
+      margin-bottom: 14px;
+      color: #1a1a1a;
+    }
+    .featured-story p {
+      font-size: 16px;
+      line-height: 1.75;
+      color: #444;
+      margin-bottom: 20px;
+    }
+    .story-byline {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #888;
+    }
+    .more-stories {
+      border-left: 1px solid #e0dbd3;
+      padding-left: 32px;
+    }
+    .more-stories h4 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 20px;
+    }
+    .story-item {
+      padding: 16px 0;
+      border-bottom: 1px solid #f0ede8;
+    }
+    .story-item:last-child { border-bottom: none; }
+    .story-item-tag {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #555555;
+      margin-bottom: 5px;
+    }
+    .story-item-title {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.35;
+      color: #2b2b2b;
+    }
+
+    /* ════════════════════════════
+       8. PRAYER / SPIRITUAL CTA
+    ════════════════════════════ */
+    .prayer-cta {
+      background: #333333;
+      color: #fff;
+      padding: 64px 32px;
+      text-align: center;
+    }
+    .prayer-cta .label { color: #aaaaaa; justify-content: center; display: flex; }
+    .prayer-cta h2 {
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 1.3;
+      max-width: 580px;
+      margin: 12px auto 16px;
+    }
+    .prayer-cta p {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 14px;
+      color: #cccccc;
+      max-width: 480px;
+      margin: 0 auto 28px;
+      line-height: 1.7;
+    }
+    .prayer-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ════════════════════════════
+       9. NEWSLETTER STRIP
+    ════════════════════════════ */
+    .newsletter {
+      background: #f7f4ef;
+      padding: 48px 32px;
+      border-top: 1px solid #e0dbd3;
+    }
+    .newsletter .section-wrap {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .newsletter-text { flex: 1; min-width: 240px; }
+    .newsletter-text h3 { font-size: 20px; font-weight: 400; margin-bottom: 6px; }
+    .newsletter-text p {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      color: #555;
+      line-height: 1.6;
+    }
+    .newsletter-form {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .newsletter-form input {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      padding: 11px 16px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      width: 240px;
+      background: #fff;
+    }
+
+    /* ════════════════════════════
+       10. FOOTER
+    ════════════════════════════ */
+    footer {
+      background: #2b2b2b;
+      color: #aaa;
+      padding: 48px 32px 32px;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-brand p {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #888;
+      line-height: 1.6;
+      margin-top: 10px;
+      max-width: 220px;
+    }
+    .footer-brand .nav-logo { color: #fff; padding: 0; border: none; font-size: 16px; }
+    .footer-col h5 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+    .footer-col ul {
+      list-style: none;
+    }
+    .footer-col ul li {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #888;
+      line-height: 2.2;
+    }
+    .footer-bottom {
+      border-top: 1px solid #444;
+      padding-top: 20px;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      color: #666;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* ════════════════════════════
+       ANNOTATION SIDEBAR CALLOUTS
+    ════════════════════════════ */
+    .callout-strip {
+      background: #fff8f0;
+      border-left: 4px solid #e06a00;
+      padding: 14px 20px;
+      margin: 0 0 0 0;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #7a3800;
+      line-height: 1.6;
+    }
+    .callout-strip strong { font-weight: 700; }
+
+  </style>
+</head>
+<body>
+
+
+<!-- ══════════════════════════════════════════
+     1. TOP BAR — active walk or urgent message
+══════════════════════════════════════════ -->
+<div class="topbar">
+  <strong>A Walk is Active Now</strong> &nbsp;·&nbsp; Mississippi River · Day 4 · Starting at Pauingassi First Nation &nbsp;·&nbsp; <a href="#" style="color:#aaaaaa;">Follow the walk →</a>
+</div>
+
+<!-- ══════════════════════════════════════════
+     2. NAVIGATION
+══════════════════════════════════════════ -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">Nibi Walks</div>
+    <ul class="nav-links">
+      <li><a href="#">The Walk</a></li>
+      <li><a href="#">Join a Walk</a></li>
+      <li><a href="#">Walk in Spirit</a></li>
+      <li><a href="#">Stories & Teachings</a></li>
+      <li><a href="#">Support</a></li>
+      <li><a href="#">Connect</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#" class="btn btn-outline">Sign Up</a>
+      <a href="#" class="btn btn-primary">Donate</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════
+     3. HERO
+══════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-eyebrow">A Prayer for the Water</div>
+  <h1>We walk for the water, and as we heal the water we heal all of life.</h1>
+  <p>Nibi Walks are Indigenous-led ceremonial walks alongside rivers, lakes, and waterways — acts of prayer, relationship, and responsibility open to all who come prepared.</p>
+  <div class="hero-actions">
+    <a href="#" class="btn-hero-primary">Find an Upcoming Walk</a>
+    <a href="#" class="btn-hero-secondary">Learn What This Is</a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     4. UPCOMING WALK SPOTLIGHT
+══════════════════════════════════════════ -->
+<section class="walk-spotlight">
+  <div class="section-wrap">
+    <div class="walk-spotlight-left">
+      <div class="walk-label">Next Walk</div>
+      <h2>Gulf to Itasca</h2>
+      <div class="walk-meta">
+        <span><strong>Dates:</strong> September to October, 2026</span>
+        <span><strong>Starting Point:</strong> A place</span>
+        <span><strong>Led by:</strong> Sharon Day</span>
+        <span><strong>Support Needed:</strong> Housing in Rhinelander area</span>
+      </div>
+      <p style="font-family: 'Helvetica Neue', Arial, sans-serif; font-size:13px; color:#555; line-height:1.7;">
+        We will walk the full length of Mississippi River from its confluence to its headwaters, offering prayers for the water and the communities that depend on it.
+      </p>
+      <div class="walk-spotlight-actions">
+        <a href="#" class="btn-dark">Walk Details & Sign Up</a>
+        <a href="#" class="btn-ghost">Protocol & How to Prepare</a>
+      </div>
+    </div>
+    <div>
+      <div class="walk-map-placeholder">
+        <div class="map-icon">🗺</div>
+        <span>Walk Route Map</span>
+        <span style="font-size:11px; color:#7a9ab8;">Interactive — starting points, route, locations</span>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="divider" />
+
+<!-- ══════════════════════════════════════════
+     5. AUDIENCE PATHWAYS
+══════════════════════════════════════════ -->
+<section class="pathways">
+  <div class="pathways-heading">
+    <span class="label">How Would You Like to Connect?</span>
+    <h2>Everyone is welcome to participate in the right way</h2>
+  </div>
+  <div class="pathway-grid">
+    <div class="pathway-card">
+      <div class="pathway-icon">🚶</div>
+      <h3>Walk With Us</h3>
+      <p>Learn what it means to walk, how to prepare yourself culturally and practically, and how to sign up for an upcoming walk.</p>
+      <a href="#" class="pathway-link">Prepare to Join →</a>
+    </div>
+    <div class="pathway-card">
+      <div class="pathway-icon">🙏</div>
+      <h3>Walk in Spirit</h3>
+      <p>Participate in the prayer from wherever you are. Add your intention, follow along, and stay connected to the walk without being physically present.</p>
+      <a href="#" class="pathway-link">Pray With Us →</a>
+    </div>
+    <div class="pathway-card">
+      <div class="pathway-icon">💧</div>
+      <h3>Support the Water</h3>
+      <p>Donate to an active walk campaign, offer material support like housing or food, or buy music and materials that fund the work.</p>
+      <a href="#" class="pathway-link">See Ways to Help →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     6. FEATURED STORY / TEACHING
+══════════════════════════════════════════ -->
+<section class="featured-story">
+  <div class="section-wrap">
+    <div>
+      <div class="story-tag">Featured Reflection</div>
+      <h2>"The river doesn't know we've stopped walking. We have to keep showing up."</h2>
+      <p>A reflection on what it means to return to a body of water that has been walked before — the memory held in the water, the responsibility it places on those who have made that prayer...</p>
+      <p class="story-byline">Sharon Day &nbsp;·&nbsp; Spring 2026</p>
+      <a href="#" class="pathway-link" style="margin-top: 12px; display:inline-block;">Read the full reflection →</a>
+    </div>
+    <div class="more-stories">
+      <h4>More from Stories &amp; Teachings</h4>
+      <div class="story-item">
+        <div class="story-item-tag">Teaching</div>
+        <div class="story-item-title">What the Eighth Fire Means for How We Walk Today</div>
+      </div>
+      <div class="story-item">
+        <div class="story-item-tag">Walker Story</div>
+        <div class="story-item-title">"I didn't know I was coming home until I got there"</div>
+      </div>
+      <div class="story-item">
+        <div class="story-item-tag">Media</div>
+        <div class="story-item-title">Interview: Sharon Day on WOJB, March 2026</div>
+      </div>
+      <div class="story-item">
+        <div class="story-item-tag">Reflection</div>
+        <div class="story-item-title">Minobimaatisiiwin and the Language of Water</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     7. WALK IN SPIRIT CTA
+══════════════════════════════════════════ -->
+<section class="prayer-cta">
+  <span class="label">Walk in Spirit</span>
+  <h2>You can participate in the prayer from wherever you are.</h2>
+  <p>Thousands of people walk with us in spirit — adding their prayers and intentions to the walk, following along in real time, and staying connected between walks.</p>
+  <div class="prayer-actions">
+    <a href="#" class="btn-hero-primary">Add Your Prayer</a>
+    <a href="#" class="btn-hero-secondary">How This Works</a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     8. NEWSLETTER
+══════════════════════════════════════════ -->
+<section class="newsletter">
+  <div class="section-wrap">
+    <div class="newsletter-text">
+      <h3>Stay connected to the walk.</h3>
+      <p>Receive updates on upcoming walks, active walk news, reflections, seasonal practices, and ways to support the water.</p>
+    </div>
+    <div class="newsletter-form">
+      <input type="email" placeholder="Your email address" />
+      <a href="#" class="btn btn-primary" style="padding: 11px 22px; font-size:13px;">Sign Up</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     9. FOOTER
+══════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">Nibi Walks</div>
+        <p>An Indigenous-led act of prayer and relationship with the waters. Led by Sharon Day and the Indigenous Peoples Task Force.</p>
+      </div>
+      <div class="footer-col">
+        <h5>The Walk</h5>
+        <ul>
+          <li>About Nibi Walks</li>
+          <li>Indigenous Leadership</li>
+          <li>The Waters</li>
+          <li>Walk History</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Participate</h5>
+        <ul>
+          <li>Upcoming Walks</li>
+          <li>Protocol & Guidelines</li>
+          <li>Walk in Spirit</li>
+          <li>Donate</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Connect</h5>
+        <ul>
+          <li>Newsletter</li>
+          <li>For Journalists</li>
+          <li>News & Updates</li>
+          <li>Exhibit Info</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Nibi Walks / Indigenous Peoples Task Force</span>
+      <span>Fiscal sponsor: IPTF &nbsp;·&nbsp; Walkers are unpaid volunteers</span>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>

@@ -157,7 +157,7 @@
        3. HERO
     ════════════════════════════ */
     .hero {
-      background: #1a1a1a;
+      background: #2b2b2b;
       color: #fff;
     }
     .hero-inner {
@@ -175,9 +175,12 @@
     }
     .hero-content {
       max-width: 1100px;
-      margin: 0 auto;
+      margin: -72px auto 0;
       width: 100%;
       padding: 52px 32px 60px;
+      background: #2b2b2b;
+      position: relative;
+      z-index: 2;
     }
     .hero-img-fpo-label {
       font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -250,7 +253,7 @@
        4. ACTIVE WALK BANNER
     ════════════════════════════ */
     .active-walk-banner {
-      background: #3a3a3a;
+      background: #2b2b2b;
       color: #fff;
       padding: 18px 32px;
     }
@@ -296,7 +299,7 @@
        4. STILLNESS / PULL QUOTE
     ════════════════════════════ */
     .stillness {
-      background: #2a2a2a;
+      background: #2b2b2b;
       padding: 96px 32px;
     }
     .stillness-inner {
@@ -333,7 +336,21 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 56px;
-      align-items: start;
+      align-items: stretch;
+    }
+    .walk-img-fpo {
+      background: #d9d4cc;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      min-height: 280px;
     }
     .walk-spotlight-left {}
     .walk-label {
@@ -395,71 +412,6 @@
       text-decoration: none;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-    }
-    .walk-carousel {
-      width: 100%;
-      border-radius: 4px;
-      overflow: hidden;
-      position: relative;
-    }
-    .walk-carousel-track {
-      display: flex;
-      transition: transform 0.35s ease;
-    }
-    .walk-carousel-slide {
-      flex: 0 0 100%;
-      height: 280px;
-      background: #d9d4cc;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #888;
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-    .carousel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255,255,255,0.85);
-      border: 1px solid #ccc;
-      border-radius: 50%;
-      width: 36px;
-      height: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      font-size: 16px;
-      color: #444;
-      line-height: 1;
-      z-index: 2;
-    }
-    .carousel-btn-prev { left: 10px; }
-    .carousel-btn-next { right: 10px; }
-    .carousel-dots {
-      position: absolute;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 6px;
-      z-index: 2;
-    }
-    .carousel-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: rgba(0,0,0,0.2);
-      cursor: pointer;
-      border: none;
-      padding: 0;
-    }
-    .carousel-dot.active {
-      background: rgba(0,0,0,0.55);
     }
     .pathway-card-img {
       flex: 0 0 220px;
@@ -709,7 +661,7 @@
        8. PRAYER / SPIRITUAL CTA
     ════════════════════════════ */
     .prayer-cta {
-      background: #333333;
+      background: #2b2b2b;
       color: #fff;
       padding: 64px 32px;
       text-align: center;
@@ -913,36 +865,10 @@
         We will walk the full length of Mississippi River from its confluence to its headwaters, offering prayers for the water and the communities that depend on it.
       </p>
       <div class="walk-spotlight-actions">
-        <a href="#" class="btn-dark">Walk Details & Sign Up</a>
-        <a href="#" class="btn-ghost">Protocol & How to Prepare</a>
+        <a href="#" class="btn-dark">Learn More</a>
       </div>
     </div>
-    <div>
-      <div class="walk-carousel" id="walkCarousel">
-        <div class="walk-carousel-track" id="walkCarouselTrack">
-          <div class="walk-carousel-slide">Image — FPO</div>
-          <div class="walk-carousel-slide">Image — FPO</div>
-          <div class="walk-carousel-slide">Image — FPO</div>
-        </div>
-        <button class="carousel-btn carousel-btn-prev" onclick="carouselMove(-1)">&#8249;</button>
-        <button class="carousel-btn carousel-btn-next" onclick="carouselMove(1)">&#8250;</button>
-        <div class="carousel-dots" id="carouselDots">
-          <button class="carousel-dot active" onclick="carouselGo(0)"></button>
-          <button class="carousel-dot" onclick="carouselGo(1)"></button>
-          <button class="carousel-dot" onclick="carouselGo(2)"></button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-     5. STILLNESS / PULL QUOTE
-══════════════════════════════════════════ -->
-<section class="stillness">
-  <div class="stillness-inner">
-    <p class="stillness-quote">"Water walks are a time for human beings to speak to the water."</p>
-    <p class="stillness-attr">— Sharon Day</p>
+    <div class="walk-img-fpo">Image — FPO</div>
   </div>
 </section>
 
@@ -983,7 +909,17 @@
 </section>
 
 <!-- ══════════════════════════════════════════
-     6. FEATURED STORY / TEACHING
+     6. STILLNESS / PULL QUOTE
+══════════════════════════════════════════ -->
+<section class="stillness">
+  <div class="stillness-inner">
+    <p class="stillness-quote">"Water walks are a time for human beings to speak to the water."</p>
+    <p class="stillness-attr">— Sharon Day</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     7. FEATURED STORY / TEACHING
 ══════════════════════════════════════════ -->
 <section class="featured-story">
   <div class="section-wrap">
@@ -1143,26 +1079,5 @@
 </footer>
 
 
-<script>
-  let carouselIndex = 0;
-  const total = 3;
-
-  function carouselRender() {
-    document.getElementById('walkCarouselTrack').style.transform = 'translateX(' + (-carouselIndex * 100) + '%)';
-    document.querySelectorAll('.carousel-dot').forEach(function(dot, i) {
-      dot.classList.toggle('active', i === carouselIndex);
-    });
-  }
-
-  function carouselMove(dir) {
-    carouselIndex = (carouselIndex + dir + total) % total;
-    carouselRender();
-  }
-
-  function carouselGo(i) {
-    carouselIndex = i;
-    carouselRender();
-  }
-</script>
 </body>
 </html>

@@ -159,23 +159,25 @@
     .hero {
       background: #1a1a1a;
       color: #fff;
-      padding: 0;
     }
     .hero-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      align-items: stretch;
-    }
-    .hero-content {
-      padding: 72px 56px 64px max(32px, calc(50% - 518px));
+      display: flex;
+      flex-direction: column;
     }
     .hero-img-fpo {
+      width: 100%;
+      height: 68vh;
+      min-height: 440px;
       background: #d9d4cc;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 420px;
+    }
+    .hero-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 52px 32px 60px;
     }
     .hero-img-fpo-label {
       font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -288,6 +290,36 @@
       white-space: nowrap;
       letter-spacing: 0.04em;
       text-transform: uppercase;
+    }
+
+    /* ════════════════════════════
+       4. STILLNESS / PULL QUOTE
+    ════════════════════════════ */
+    .stillness {
+      background: #2a2a2a;
+      padding: 96px 32px;
+    }
+    .stillness-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .stillness-quote {
+      font-family: 'Georgia', serif;
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 1.55;
+      color: #e8e4de;
+      font-style: italic;
+      margin-bottom: 24px;
+    }
+    .stillness-attr {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #666;
     }
 
     /* ════════════════════════════
@@ -840,10 +872,6 @@
       <li><a href="#">Support</a></li>
       <li><a href="#">Connect</a></li>
     </ul>
-    <div class="nav-cta">
-      <a href="#" class="btn btn-outline">Sign Up</a>
-      <a href="#" class="btn btn-primary">Donate</a>
-    </div>
   </div>
 </nav>
 
@@ -852,6 +880,9 @@
 ══════════════════════════════════════════ -->
 <section class="hero">
   <div class="hero-inner">
+    <div class="hero-img-fpo">
+      <span class="hero-img-fpo-label">Hero Image — FPO</span>
+    </div>
     <div class="hero-content">
       <div class="hero-eyebrow">A Prayer for the Water</div>
       <h1>We walk for the water, and as we heal the water we heal all of life.</h1>
@@ -860,9 +891,6 @@
         <a href="#" class="btn-hero-primary">Find an Upcoming Walk</a>
         <a href="#" class="btn-hero-secondary">Learn What This Is</a>
       </div>
-    </div>
-    <div class="hero-img-fpo">
-      <span class="hero-img-fpo-label">Hero Image — FPO</span>
     </div>
   </div>
 </section>
@@ -907,7 +935,16 @@
     </div>
   </div>
 </section>
-<hr class="divider" />
+
+<!-- ══════════════════════════════════════════
+     5. STILLNESS / PULL QUOTE
+══════════════════════════════════════════ -->
+<section class="stillness">
+  <div class="stillness-inner">
+    <p class="stillness-quote">"Water walks are a time for human beings to speak to the water."</p>
+    <p class="stillness-attr">— Sharon Day</p>
+  </div>
+</section>
 
 <!-- ══════════════════════════════════════════
      5. AUDIENCE PATHWAYS
@@ -946,7 +983,54 @@
 </section>
 
 <!-- ══════════════════════════════════════════
-     6. INSTAGRAM HIGHLIGHTS
+     6. FEATURED STORY / TEACHING
+══════════════════════════════════════════ -->
+<section class="featured-story">
+  <div class="section-wrap">
+    <div>
+      <div class="story-tag">Featured Reflection</div>
+      <h2>"The river doesn't know we've stopped walking. We have to keep showing up."</h2>
+      <p>A reflection on what it means to return to a body of water that has been walked before — the memory held in the water, the responsibility it places on those who have made that prayer...</p>
+      <p class="story-byline">Sharon Day &nbsp;·&nbsp; Spring 2026</p>
+      <a href="#" class="pathway-link" style="margin-top: 12px; display:inline-block;">Read the full reflection →</a>
+    </div>
+    <div class="more-stories">
+      <h4>More from Stories &amp; Teachings</h4>
+      <div class="story-item">
+        <div class="story-item-tag">Teaching</div>
+        <div class="story-item-title">What the Eighth Fire Means for How We Walk Today</div>
+      </div>
+      <div class="story-item">
+        <div class="story-item-tag">Walker Story</div>
+        <div class="story-item-title">"I didn't know I was coming home until I got there"</div>
+      </div>
+      <div class="story-item">
+        <div class="story-item-tag">Media</div>
+        <div class="story-item-title">Interview: Sharon Day on WOJB, March 2026</div>
+      </div>
+      <div class="story-item">
+        <div class="story-item-tag">Reflection</div>
+        <div class="story-item-title">Minobimaatisiiwin and the Language of Water</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     7. WALK IN SPIRIT CTA
+══════════════════════════════════════════ -->
+<section class="prayer-cta">
+  <span class="label">Walk in Spirit</span>
+  <h2>You can participate in the prayer from wherever you are.</h2>
+  <p>Thousands of people walk with us in spirit — adding their prayers and intentions to the walk, following along in real time, and staying connected between walks.</p>
+  <div class="prayer-actions">
+    <a href="#" class="btn-hero-primary">Add Your Prayer</a>
+    <a href="#" class="btn-hero-secondary">How This Works</a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     8. INSTAGRAM HIGHLIGHTS
 ══════════════════════════════════════════ -->
 <section class="instagram-section">
   <div class="instagram-heading">
@@ -998,54 +1082,7 @@
 </section>
 
 <!-- ══════════════════════════════════════════
-     7. FEATURED STORY / TEACHING
-══════════════════════════════════════════ -->
-<section class="featured-story">
-  <div class="section-wrap">
-    <div>
-      <div class="story-tag">Featured Reflection</div>
-      <h2>"The river doesn't know we've stopped walking. We have to keep showing up."</h2>
-      <p>A reflection on what it means to return to a body of water that has been walked before — the memory held in the water, the responsibility it places on those who have made that prayer...</p>
-      <p class="story-byline">Sharon Day &nbsp;·&nbsp; Spring 2026</p>
-      <a href="#" class="pathway-link" style="margin-top: 12px; display:inline-block;">Read the full reflection →</a>
-    </div>
-    <div class="more-stories">
-      <h4>More from Stories &amp; Teachings</h4>
-      <div class="story-item">
-        <div class="story-item-tag">Teaching</div>
-        <div class="story-item-title">What the Eighth Fire Means for How We Walk Today</div>
-      </div>
-      <div class="story-item">
-        <div class="story-item-tag">Walker Story</div>
-        <div class="story-item-title">"I didn't know I was coming home until I got there"</div>
-      </div>
-      <div class="story-item">
-        <div class="story-item-tag">Media</div>
-        <div class="story-item-title">Interview: Sharon Day on WOJB, March 2026</div>
-      </div>
-      <div class="story-item">
-        <div class="story-item-tag">Reflection</div>
-        <div class="story-item-title">Minobimaatisiiwin and the Language of Water</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-     7. WALK IN SPIRIT CTA
-══════════════════════════════════════════ -->
-<section class="prayer-cta">
-  <span class="label">Walk in Spirit</span>
-  <h2>You can participate in the prayer from wherever you are.</h2>
-  <p>Thousands of people walk with us in spirit — adding their prayers and intentions to the walk, following along in real time, and staying connected between walks.</p>
-  <div class="prayer-actions">
-    <a href="#" class="btn-hero-primary">Add Your Prayer</a>
-    <a href="#" class="btn-hero-secondary">How This Works</a>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-     8. NEWSLETTER
+     9. NEWSLETTER
 ══════════════════════════════════════════ -->
 <section class="newsletter">
   <div class="section-wrap">
@@ -1061,7 +1098,7 @@
 </section>
 
 <!-- ══════════════════════════════════════════
-     9. FOOTER
+     10. FOOTER
 ══════════════════════════════════════════ -->
 <footer>
   <div class="footer-inner">
